@@ -1,0 +1,13 @@
+version: '3'
+services:
+  weather-app:
+    volumes:
+      - /app/node/modules
+      - .:/app
+    build: 
+      dockerfile: Dockerfile.dev
+      context: .
+    stdin_open: true 
+    tty: true 
+    command: tail -F anything
+    
